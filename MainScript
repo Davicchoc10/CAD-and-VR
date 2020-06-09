@@ -1,1 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using UnityEngine;
 
+public class MainrScript : MonoBehaviour
+{
+    public GameObject reductor;
+    
+    public GameObject rotX;
+    public GameObject rotY;
+    public GameObject rotZ;
+    public GameObject reset;
+    public GameObject anim;
+
+    private float xRot, yRot, zRot, xPos, yPos, zPos;
+
+    public float deg;
+
+    void Start()
+    {
+
+        xRot = reductor.transform.rotation.x;
+        yRot = reductor.transform.rotation.y;
+        zRot = reductor.transform.rotation.z;
+
+        xPos = reductor.transform.position.x;
+        yPos = reductor.transform.position.y;
+        zPos = reductor.transform.position.z;
+
+        Vector3. pocition1 = new Vector3(xPos, yPos, zPos);
+        Vector3.pocition2 = new Vector3(xPos, yPos + 3f, zPos - 3f); 
+
+    }
+
+   
+    void Update()
+    {
+        
+    }
+
+    bool Usl = false;
+    public void StartRotation()
+    {
+        Usl = !Usl;
+
+        rotX.SetActive(Usl);
+        rotY.SetActive(Usl); 
+        rotZ.SetActive(Usl);
+        reset.SetActive(Usl);
+        anim.SetActive(Usl);
+    }
+
+}
